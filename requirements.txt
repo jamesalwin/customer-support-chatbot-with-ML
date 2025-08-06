@@ -1,5 +1,4 @@
-Flask
-nltk
+streamlit
 scikit-learn
 numpy
-gunicorn
+nltk
