@@ -2,48 +2,33 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hey", "Hello", "Good morning", "Good evening"],
-      "responses": ["Hello! How can I assist you today?", "Hi there! What can I help you with?"]
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! Need any help?"]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye", "Talk to you soon"],
-      "responses": ["Goodbye! Have a great day!", "See you later!", "Thanks for visiting, take care!"]
-    },
-    {
-      "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "Much appreciated"],
-      "responses": ["You're welcome!", "Happy to help!", "Anytime!"]
-    },
-    {
-      "tag": "refund",
-      "patterns": ["How do I get a refund?", "I want a refund", "Can I get my money back?"],
-      "responses": ["To request a refund, please visit your order history and click 'Request Refund'."]
+      "patterns": ["bye", "see you", "goodbye", "take care"],
+      "responses": ["Goodbye! Have a great day!", "See you soon!"]
     },
     {
       "tag": "order_status",
-      "patterns": ["Where is my order?", "Order status", "Track my order"],
-      "responses": ["You can check your order status in the 'My Orders' section after logging in."]
+      "patterns": ["track my order", "order status", "where is my package"],
+      "responses": ["Please provide your order ID to check the status."]
     },
     {
-      "tag": "cancel_order",
-      "patterns": ["Cancel my order", "I want to cancel the order", "Stop the order"],
-      "responses": ["If your order hasn't shipped, you can cancel it from the 'My Orders' page."]
+      "tag": "refund",
+      "patterns": ["refund", "money back", "return product"],
+      "responses": ["Sure, we can help with that. When did you place the order?"]
     },
     {
-      "tag": "shipping",
-      "patterns": ["What are the shipping options?", "Do you offer express delivery?", "How long does shipping take?"],
-      "responses": ["We offer standard and express shipping. Delivery usually takes 3-5 business days."]
+      "tag": "payment_issue",
+      "patterns": ["payment failed", "can't pay", "card declined"],
+      "responses": ["Please try using another payment method or contact support."]
     },
     {
-      "tag": "support",
-      "patterns": ["I need help", "Customer support", "Talk to support", "Help me"],
-      "responses": ["Sure! Our customer support is here to assist you. Please describe your issue."]
-    },
-    {
-      "tag": "default",
+      "tag": "not_understood",
       "patterns": [],
-      "responses": ["Sorry, I didn't understand that. Could you rephrase?"]
+      "responses": ["Sorry, I didn't understand that."]
     }
   ]
 }
