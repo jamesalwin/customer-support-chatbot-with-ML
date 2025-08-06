@@ -21,21 +21,24 @@ def get_bot_response(user_input):
 
     return "Sorry, I didn't understand that."
 
-# Streamlit UI
-st.set_page_config(page_title="Customer Support Bot", page_icon="💬")
+# Streamlit UI setup
+st.set_page_config(page_title="Customer Support Bot", page_icon="🤖")
 st.title("🤖 Customer Support Chatbot")
 
-if "chat" not in st.session_state:
-    st.session_state.chat = []
+# Initialize chat history
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
 
-user_input = st.text_input("Type your message:", key="input")
+# Input from user
+user_msg = st.text_input("Type your message:", key="user_message")
 
-if st.button("Send") or user_input:
-    if user_input:
-        reply = get_bot_response(user_input)
-        st.session_state.chat.append(("You", user_input))
-        st.session_state.chat.append(("Bot", reply))
-        st.session_state.input = ""
+if st.button("Send") or user_msg:
+    if user_msg:
+        reply = get_bot_response(user_msg)
+        st.session_state.chat_history.append(("You", user_msg))
+        st.session_state.chat_history.append(("Bot", reply))
+        st.session_state.user_message = ""  # ✅ Reset user input field
 
-for sender, message in reversed(st.session_state.chat):
+# Display chat history
+for sender, message in reversed(st.session_state.chat_history):
     st.write(f"**{sender}:** {message}")
